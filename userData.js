@@ -1143,11 +1143,13 @@ function resetProgress(){
 
 
 
-    userData.diaryEntries = [];
+userData.diaryEntries = [];
 
 
-    userData.selectedDiaryDate = "";
+userData.selectedDiaryDate = "";
 
+
+userData.personalDiaryEntries = [];
 
 
 
