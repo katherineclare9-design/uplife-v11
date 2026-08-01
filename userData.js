@@ -747,6 +747,16 @@ function deletePersonalDiaryEntry(index){
 
 
 
+    if(userData.selectedPersonalDiaryPage >= userData.personalDiaryEntries.length){
+
+        userData.selectedPersonalDiaryPage =
+
+        Math.max(0, userData.personalDiaryEntries.length - 1);
+
+    }
+
+
+
     saveUserData();
 
 
@@ -757,6 +767,55 @@ function deletePersonalDiaryEntry(index){
 
 }
 
+
+
+
+
+function changeDiaryPage(amount){
+
+
+
+    const totalPages = userData.personalDiaryEntries.length;
+
+
+
+    if(totalPages === 0){
+
+        return;
+
+    }
+
+
+
+    userData.selectedPersonalDiaryPage += amount;
+
+
+
+    if(userData.selectedPersonalDiaryPage < 0){
+
+        userData.selectedPersonalDiaryPage = totalPages - 1;
+
+    }
+
+
+
+    if(userData.selectedPersonalDiaryPage >= totalPages){
+
+        userData.selectedPersonalDiaryPage = 0;
+
+    }
+
+
+
+    saveUserData();
+
+
+
+    showPage("diary");
+
+
+
+}
 
 
 
