@@ -1797,8 +1797,7 @@ userData.personalDiaryEntries.length === 0
 
 :
 
-userData.personalDiaryEntries.map(entry=>`
-
+[...userData.personalDiaryEntries].reverse().map(entry=>`
 
 <div class="diary-entry">
 
@@ -1807,6 +1806,13 @@ userData.personalDiaryEntries.map(entry=>`
 
 
 <p>${entry.text}</p>
+
+
+<button onclick="deletePersonalDiaryEntry(${userData.personalDiaryEntries.indexOf(entry)})">
+
+🗑️ Delete
+
+</button>
 
 
 </div>
