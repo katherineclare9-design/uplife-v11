@@ -1895,14 +1895,6 @@ Save Page
 }
 
 
-
-<div class="card">
-
-
-<h2>✍️ Write Today</h2>
-
-
-
 <textarea
 
 id="diaryText"
