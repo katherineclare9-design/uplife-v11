@@ -206,6 +206,8 @@ selectedDiaryDate:"",
 personalDiaryEntries:[],
 
 
+selectedPersonalDiaryPage:0,
+
 
 
 
