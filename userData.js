@@ -686,6 +686,79 @@ function getAvailableDiaryDates(){
 
 
 
+// =====================
+// PERSONAL DIARY SYSTEM
+// =====================
+
+
+function savePersonalDiaryEntry(){
+
+
+
+    const text = document.getElementById("diaryText").value;
+
+
+
+    if(text.trim() === ""){
+
+        return;
+
+    }
+
+
+
+    userData.personalDiaryEntries.push({
+
+
+
+        date:new Date().toLocaleDateString(),
+
+
+
+        text:text
+
+
+
+    });
+
+
+
+    saveUserData();
+
+
+
+    showPage("diary");
+
+
+
+}
+
+
+
+
+
+function deletePersonalDiaryEntry(index){
+
+
+
+    userData.personalDiaryEntries.splice(index,1);
+
+
+
+    saveUserData();
+
+
+
+    showPage("diary");
+
+
+
+}
+
+
+
+
+
 
 
 
