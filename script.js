@@ -1508,12 +1508,11 @@ Your food history is saved in your Diary.
 
 
 
-<button onclick="showPage('diary')">
+<button onclick="showPage('foodlog')">
 
-Open Diary
+Open Food Log
 
 </button>
-
 
 
 </div>
@@ -1539,14 +1538,13 @@ Open Diary
 // =====================
 
 
-if(page === "diary"){
+if(page === "foodlog"){
 
 
 
 const selected =
 
 userData.selectedDiaryDate ||
-
 new Date().toLocaleDateString();
 
 
@@ -1566,8 +1564,7 @@ content = `
 
 
 
-<h1>📖 Athlete Diary</h1>
-
+<h1>📋 Food Log</h1>
 
 
 
@@ -1735,7 +1732,107 @@ ${entry.details}
 
 
 }
-    // =====================
+// =====================
+// PERSONAL DIARY PAGE
+// =====================
+
+
+if(page === "diary"){
+
+
+
+content = `
+
+
+
+<h1>📔 My Diary</h1>
+
+
+
+<div class="card">
+
+
+<h2>✍️ Write Today</h2>
+
+
+
+<textarea
+
+id="diaryText"
+
+placeholder="Write your thoughts, goals, feelings, or reflections..."
+
+></textarea>
+
+
+
+
+<button onclick="savePersonalDiaryEntry()">
+
+Save Entry
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>📚 Previous Entries</h2>
+
+
+
+${
+userData.personalDiaryEntries.length === 0
+
+?
+
+"<p>No diary entries yet.</p>"
+
+:
+
+userData.personalDiaryEntries.map(entry=>`
+
+
+<div class="diary-entry">
+
+
+<h3>${entry.date}</h3>
+
+
+<p>${entry.text}</p>
+
+
+</div>
+
+
+`).join("")
+
+}
+
+
+
+</div>
+
+
+
+`;
+
+
+
+}
+
+
+
+
+
+// =====================
 // TRAINING PAGE
 // =====================
 
@@ -2796,13 +2893,18 @@ app.innerHTML = content + `
 
 
 
-<button onclick="showPage('diary')">
+<button onclick="showPage('foodlog')">
 
-📖
+📋
 
 </button>
 
 
+<button onclick="showPage('diary')">
+
+📔
+
+</button>
 
 
 <button onclick="showPage('badges')">
