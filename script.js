@@ -1892,69 +1892,6 @@ Save Page
 
 
 
-}
-
-
-<textarea
-
-id="diaryText"
-
-placeholder="Write your thoughts, goals, feelings, or reflections..."
-
-></textarea>
-
-
-
-
-<button onclick="savePersonalDiaryEntry()">
-
-Save Entry
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<h2>📚 Previous Entries</h2>
-
-
-
-${
-userData.personalDiaryEntries.length === 0
-
-?
-
-"<p>No diary entries yet.</p>"
-
-:
-
-[...userData.personalDiaryEntries].reverse().map(entry=>`
-
-<div class="diary-entry">
-
-
-<h3>${entry.date}</h3>
-
-
-<p>${entry.text}</p>
-
-
-<button onclick="deletePersonalDiaryEntry(${userData.personalDiaryEntries.indexOf(entry)})">
-
-🗑️ Delete
-
-</button>
-
-
-</div>
 
 
 `).join("")
@@ -1966,10 +1903,7 @@ userData.personalDiaryEntries.length === 0
 </div>
 
 
-
 `;
-
-
 
 }
 
