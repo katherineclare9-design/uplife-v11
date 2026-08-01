@@ -1741,11 +1741,158 @@ if(page === "diary"){
 
 
 
+const entries = userData.personalDiaryEntries;
+
+
+
+const pageIndex = userData.selectedPersonalDiaryPage || 0;
+
+
+
+const entry = entries[pageIndex];
+
+
+
 content = `
 
 
 
 <h1>📔 My Diary</h1>
+
+
+
+<div class="card">
+
+
+
+<button onclick="changeDiaryPage(-1)">
+
+⬅️ Previous
+
+</button>
+
+
+
+
+<p>
+
+Page ${entries.length === 0 ? 0 : pageIndex + 1}
+
+of
+
+${entries.length}
+
+</p>
+
+
+
+
+<button onclick="changeDiaryPage(1)">
+
+Next ➡️
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+
+${
+entry
+
+?
+
+
+`
+
+<h2>
+
+${entry.date}
+
+</h2>
+
+
+<hr>
+
+
+<p>
+
+${entry.text}
+
+</p>
+
+
+
+<button onclick="deletePersonalDiaryEntry(${pageIndex})">
+
+🗑️ Delete Page
+
+</button>
+
+`
+
+:
+
+
+`
+
+<h2>
+
+📖 Empty Page
+
+</h2>
+
+
+<p>
+
+Write your first diary entry!
+
+</p>
+
+
+<textarea
+
+id="diaryText"
+
+placeholder="Write your thoughts..."
+
+></textarea>
+
+
+<br>
+
+
+<button onclick="savePersonalDiaryEntry()">
+
+Save Page
+
+</button>
+
+
+`
+
+}
+
+
+
+</div>
+
+
+
+`;
+
+
+
+}
 
 
 
