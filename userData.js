@@ -193,7 +193,7 @@ nutritionNotes:"",
 
 
 // =====================
-// ATHLETE DIARY
+// FOOD LOG + PERSONAL DIARY
 // =====================
 
 
@@ -201,6 +201,9 @@ diaryEntries:[],
 
 
 selectedDiaryDate:"",
+
+
+personalDiaryEntries:[],
 
 
 
